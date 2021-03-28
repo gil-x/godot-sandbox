@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -10,6 +11,17 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 640.0
+margin_bottom = 480.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -24,27 +36,27 @@ __meta__ = {
 }
 
 [node name="Display" type="Label" parent="VBoxContainer"]
-margin_top = 487.0
-margin_right = 760.0
-margin_bottom = 506.0
+margin_top = 367.0
+margin_right = 600.0
+margin_bottom = 386.0
 custom_fonts/font = SubResource( 1 )
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 510.0
-margin_right = 760.0
-margin_bottom = 560.0
+margin_top = 390.0
+margin_right = 600.0
+margin_bottom = 440.0
 
 [node name="TextInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
-margin_right = 697.0
+margin_right = 537.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 placeholder_text = "Type your text here..."
 
 [node name="Submit" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 701.0
-margin_right = 760.0
+margin_left = 541.0
+margin_right = 600.0
 margin_bottom = 50.0
 text = "Ajouter"
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
