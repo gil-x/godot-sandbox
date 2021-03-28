@@ -48,16 +48,21 @@ margin_right = 600.0
 margin_bottom = 440.0
 
 [node name="TextInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
-margin_right = 537.0
+margin_right = 533.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 placeholder_text = "Type your text here..."
 
 [node name="Submit" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 541.0
-margin_right = 600.0
+margin_left = 537.0
+margin_right = 596.0
 margin_bottom = 50.0
 text = "Ajouter"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 600.0
+margin_right = 600.0
+margin_bottom = 50.0
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Submit" to="." method="_on_Submit_pressed"]
