@@ -23,6 +23,7 @@ __meta__ = {
 margin_top = 518.0
 margin_right = 760.0
 margin_bottom = 532.0
+autowrap = true
 
 [node name="TextInput" type="LineEdit" parent="VBoxContainer"]
 margin_top = 536.0

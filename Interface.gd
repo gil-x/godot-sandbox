@@ -11,6 +11,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func updateDisplay(new_text):
+	$VBoxContainer/Display.text = $"VBoxContainer/Display".text + new_text + "\n"
 
 func _on_TextInput_text_entered(new_text):
-	$"VBoxContainer/Display".text = new_text
+	updateDisplay(new_text)
+	$VBoxContainer/TextInput.clear()
