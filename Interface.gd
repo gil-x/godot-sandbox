@@ -13,7 +13,11 @@ func _ready():
 
 func updateDisplay(new_text):
 	$VBoxContainer/Display.text = $"VBoxContainer/Display".text + new_text + "\n"
+	$VBoxContainer/HBoxContainer/TextInput.clear()
 
 func _on_TextInput_text_entered(new_text):
 	updateDisplay(new_text)
-	$VBoxContainer/TextInput.clear()
+
+
+func _on_Submit_pressed():
+	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)

@@ -24,15 +24,28 @@ __meta__ = {
 }
 
 [node name="Display" type="Label" parent="VBoxContainer"]
-margin_top = 513.0
+margin_top = 487.0
 margin_right = 760.0
-margin_bottom = 532.0
+margin_bottom = 506.0
 custom_fonts/font = SubResource( 1 )
 autowrap = true
 
-[node name="TextInput" type="LineEdit" parent="VBoxContainer"]
-margin_top = 536.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 510.0
 margin_right = 760.0
 margin_bottom = 560.0
+
+[node name="TextInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+margin_right = 697.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
 placeholder_text = "Type your text here..."
-[connection signal="text_entered" from="VBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
+
+[node name="Submit" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 701.0
+margin_right = 760.0
+margin_bottom = 50.0
+text = "Ajouter"
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Submit" to="." method="_on_Submit_pressed"]
