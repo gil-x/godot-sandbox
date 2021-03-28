@@ -10,3 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_TextInput_text_entered(new_text):
+	$"VBoxContainer/Display".text = new_text

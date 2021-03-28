@@ -29,3 +29,4 @@ margin_top = 536.0
 margin_right = 760.0
 margin_bottom = 560.0
 placeholder_text = "Type your text here..."
+[connection signal="text_entered" from="VBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
