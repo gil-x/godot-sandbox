@@ -21,3 +21,7 @@ func _on_TextInput_text_entered(new_text):
 
 func _on_Submit_pressed():
 	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)
+
+
+func _on_TextureButton_pressed():
+	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)
