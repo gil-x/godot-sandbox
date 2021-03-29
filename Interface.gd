@@ -6,7 +6,6 @@ var user_name = "Gil"
 func _ready():
 	print("Hello {user_name}".format({"user_name": user_name}))
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -18,14 +17,14 @@ func updateDisplay(new_text):
 func emptyDisplay():
 	$VBoxContainer/Display.text = ""
 
-
 func _on_TextInput_text_entered(new_text):
 	updateDisplay(new_text)
-
 
 func _on_Submit_pressed():
 	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)
 
-
 func _on_TextureButton_pressed():
+	$ConfirmationDialog.popup_centered()
+
+func _on_ConfirmationDialog_confirmed():
 	emptyDisplay()

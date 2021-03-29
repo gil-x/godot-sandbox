@@ -21,9 +21,27 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.68176
+margin_bottom = 1.68176
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -35.0
+margin_right = 100.0
+margin_bottom = 35.0
+window_title = "On efface tout ?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,6 +55,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 alignment = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -73,6 +92,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 6 )
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Submit" to="." method="_on_Submit_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
