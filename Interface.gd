@@ -15,7 +15,7 @@ func _ready():
 #	pass
 
 func update_display(new_text):
-	display_text.text = $"VBoxContainer/Display".text + new_text + "\n"
+	display_text.text = display_text.text + new_text + "\n"
 	text_input.clear()
 
 func empty_display():
@@ -31,4 +31,14 @@ func _on_TextureButton_pressed():
 	confirmation_dialog.popup_centered()
 
 func _on_ConfirmationDialog_confirmed():
+	print_txt()
 	empty_display()
+	
+func print_txt():
+	print(display_text.text)
+	var file = File.new()
+	file.open("output/export.txt", File.READ)
+	var previous_text = file.get_as_text()
+	file.open("output/export.txt", File.WRITE)
+	file.store_string(previous_text + display_text.text)
+	file.close()
