@@ -2,6 +2,10 @@ extends Control
 
 var user_name = "Gil"
 
+onready var display_text = $VBoxContainer/Display
+onready var text_input = $VBoxContainer/HBoxContainer/TextInput
+onready var confirmation_dialog = $ConfirmationDialog
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Hello {user_name}".format({"user_name": user_name}))
@@ -10,21 +14,21 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func updateDisplay(new_text):
-	$VBoxContainer/Display.text = $"VBoxContainer/Display".text + new_text + "\n"
-	$VBoxContainer/HBoxContainer/TextInput.clear()
+func update_display(new_text):
+	display_text.text = $"VBoxContainer/Display".text + new_text + "\n"
+	text_input.clear()
 
-func emptyDisplay():
-	$VBoxContainer/Display.text = ""
+func empty_display():
+	display_text.text = ""
 
 func _on_TextInput_text_entered(new_text):
-	updateDisplay(new_text)
+	update_display(new_text)
 
 func _on_Submit_pressed():
-	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)
+	update_display(text_input.text)
 
 func _on_TextureButton_pressed():
-	$ConfirmationDialog.popup_centered()
+	confirmation_dialog.popup_centered()
 
 func _on_ConfirmationDialog_confirmed():
-	emptyDisplay()
+	empty_display()
