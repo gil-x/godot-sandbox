@@ -15,6 +15,10 @@ func updateDisplay(new_text):
 	$VBoxContainer/Display.text = $"VBoxContainer/Display".text + new_text + "\n"
 	$VBoxContainer/HBoxContainer/TextInput.clear()
 
+func emptyDisplay():
+	$VBoxContainer/Display.text = ""
+
+
 func _on_TextInput_text_entered(new_text):
 	updateDisplay(new_text)
 
@@ -24,4 +28,4 @@ func _on_Submit_pressed():
 
 
 func _on_TextureButton_pressed():
-	updateDisplay($VBoxContainer/HBoxContainer/TextInput.text)
+	emptyDisplay()
