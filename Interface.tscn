@@ -76,6 +76,7 @@ margin_right = 483.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.560784, 0.560784, 0.560784, 1 )
 placeholder_text = "Type your text here..."
 
 [node name="Submit" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -93,6 +94,7 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 6 )
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_changed"]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/TextInput" to="." method="_on_TextInput_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Submit" to="." method="_on_Submit_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
