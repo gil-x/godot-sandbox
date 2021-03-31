@@ -76,4 +76,7 @@ func _on_QuitButton_pressed():
 	print("QUIT!")
 	
 
-
+func _on_RandGenerator_pressed():
+	randomize() # Pick a new seed
+	$VBoxContainer/HBoxContainer/RandGenerator.text =  str(randi() % 10) 
+	
