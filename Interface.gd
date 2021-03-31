@@ -62,8 +62,16 @@ func store_txt():
 
 func end_game():
 	store_txt()
+	del_button.queue_free()
+	var quit_button = Button.new()
+	quit_button.set_name("QuitButton")
+	quit_button.text = "X"
+	$VBoxContainer/HBoxContainer.add_child(quit_button)
+	quit_button.connect("pressed", self, "_on_QuitButton_pressed")
 	print("This is the end")
-	
 
+
+func _on_QuitButton_pressed():
+	print("QUIT!")
 
 
