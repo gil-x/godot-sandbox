@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/button_on.png" type="Texture" id=4]
 [ext_resource path="res://assets/button.png" type="Texture" id=5]
 [ext_resource path="res://assets/button_hover.png" type="Texture" id=6]
+[ext_resource path="res://CustomLabel.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -58,6 +59,14 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="CustomLabel" type="Label" parent="VBoxContainer"]
+margin_top = 347.0
+margin_right = 600.0
+margin_bottom = 361.0
+text = "Type your chosen text in Custom Text var just up!"
+script = ExtResource( 7 )
+custom_text = "Hello my friend!"
 
 [node name="Display" type="Label" parent="VBoxContainer"]
 margin_top = 365.0

@@ -10,6 +10,7 @@ onready var confirmation_dialog = $ConfirmationDialog
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Hello {user_name}".format({"user_name": user_name}))
+	$VBoxContainer/CustomLabel.text = $VBoxContainer/CustomLabel.custom_text
 	text_input.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
